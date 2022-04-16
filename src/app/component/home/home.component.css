@@ -2,6 +2,8 @@
     background-color: black;
     background-repeat: no-repeat;
     background-size: cover;
+    height: 91.3vh;
+    width: 100%;
     background-position: center center;
     margin: 0;
     color: #212529;
@@ -13,6 +15,40 @@
     font-size: 70%;
 }
 
-.header h2, h4{
+.header h2, h5{
     color: white;
+    font-family: 'Josefin Sans', sans-serif;
 }
+
+.header .content {
+    padding: 6%;
+}
+
+a {
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.arrow_down {
+    animation: bounce 2s infinite;
+  }
+
+  @keyframes bounce {
+
+    /* animates arrows on header */
+    0%,
+    20%,
+    50%,
+    80%,
+    100% {
+      transform: translateY(0);
+    }
+  
+    40% {
+      transform: translateY(-25px);
+    }
+  
+    60% {
+      transform: translateY(-15px);
+    }
+  }
