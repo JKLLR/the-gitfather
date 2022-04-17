@@ -1,4 +1,13 @@
 @font-face {
-    font-family:god;
-    src: url("./assets/god.ttf");
-  }  
+  font-family: god;
+  src: url("./assets/god.ttf");
+}
+
+@font-face {
+  font-family: signature;
+  src: url("./assets/Signature.ttf");
+}
+
+
+
+
