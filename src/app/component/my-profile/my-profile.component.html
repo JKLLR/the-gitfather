@@ -1,7 +1,7 @@
 <div id="content" class="container-fluid">
     <h2 class="text-center">My Profile</h2>
     <hr>
-    
+
     <div class="media">
       <img src={{user.avatar_url}} class="mr-3 img-responsive img-cirlce" alt="...">
       <div class="media-body">
@@ -27,17 +27,11 @@
                       appVisitedRepository>{{repo.name|titlecase}}</a></div>
                   <p class="card-text" *ngIf="repo.description">{{repo.description}}</p>
                   <p class="card-text" *ngIf="!repo.description">No description is available for this repository</p>
-                  <!-- <small>Last updated on {{repo.updated_at|date}}</small><br> -->
+                  <small>Last updated on {{repo.updated_at|date}}</small><br><br>
                   <div class="card-bottom">
                     <div *ngIf="repo.language">
-                      <i class="fas fa-circle"></i>&nbsp;{{repo.language}}
+                      <i></i>&nbsp;Language Used:{{repo.language}}
                     </div>&nbsp;&nbsp;
-                    <div *ngIf="!repo.language">
-                      <i class="fas fa-circle"></i>&nbsp;Undefined
-                    </div>&nbsp;&nbsp;
-                    <!-- <div>
-                      {{repo.forks}}&nbsp;<i class="fas fa-code-branch"></i>&nbsp;Forks
-                    </div> -->
                   </div>
                 </div>
               </div>

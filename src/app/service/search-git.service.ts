@@ -57,7 +57,8 @@ export class SearchGitService {
       name: string,
       description: string,
       html_url: string,
-      language: string
+      language: string,
+      updated_at:Date
 
     }
 
@@ -69,13 +70,14 @@ export class SearchGitService {
 
       this.http.get<repositoryApiResponse>(`https://api.github.com/users/${userName}/repos?${environment.apiKey}`).toPromise().then(response => {
         for (let i = 0; i < this.user.public_repos; i++) {
-          let repo = new RepoClass("", "", "", "")
+          let repo = new RepoClass("", "", "", "",new Date())
 
 
           repo.name = response[i]["name"]
           repo.description = response[i]["description"]
           repo.html_url = response[i]["html_url"]
           repo.language = response[i]["language"]
+          repo.updated_at = response[i]["updated_at"]
 
           this.repos.push(repo)
         }
