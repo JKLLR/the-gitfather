@@ -1,4 +1,7 @@
 import { Component, OnInit } from '@angular/core';
+import { SearchGitService } from 'src/app/service/search-git.service';
+import { UsersClass } from 'src/app/users-class';
+import { RepoClass } from 'src/app/repo-class';
 
 @Component({
   selector: 'app-my-profile',
@@ -7,9 +10,23 @@ import { Component, OnInit } from '@angular/core';
 })
 export class MyProfileComponent implements OnInit {
 
-  constructor() { }
+  user!: UsersClass;
+  repos!: RepoClass[];
 
-  ngOnInit(): void {
+  userNotFound(){
+    return "User not found"
   }
+
+  constructor(private searchgit:SearchGitService) { }
+
+  ngOnInit(){
+    this.searchgit.getUserData("jkllr");
+    this.user= this.searchgit.user;
+
+    this.searchgit.getRepositoryData("jkllr")
+    this.repos= this.searchgit.repos;
+
+  }
+
 
 }
