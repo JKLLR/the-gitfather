@@ -4,6 +4,7 @@ import { UsersClass } from '../users-class';
 import { RepoClass } from '../repo-class';
 import { environment } from 'src/environments/environment';
 import { ActivatedRoute } from '@angular/router';
+import { RepoByName } from '../repo-by-name';
 
 @Injectable({
   providedIn: 'root'
@@ -11,6 +12,7 @@ import { ActivatedRoute } from '@angular/router';
 export class SearchGitService {
   user: UsersClass;
   repos: RepoClass[] = [];
+  repobyname: RepoByName[] = [];
 
 
 
@@ -99,6 +101,41 @@ export class SearchGitService {
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
     this.user = new UsersClass("", "", "", "",'');
+  }
+
+  repoByNameRequest(reponame){
+    interface repoByNameApiResponse{
+      // total_count:number,
+      items: []
+      } 
+      let promise = new Promise<void>((resolve,reject)=>{
+        let arrayLength = this.repobyname.length;
+        for(let i=0; i<arrayLength; i++){ //removing initial values from array before pushing to the array
+          this.repobyname.pop()
+        }
+        this.http.get<repoByNameApiResponse>(`https://api.github.com/search/repositories?q=${reponame}`).toPromise().then(response=>{
+          // this.numberOfRepos.repoCount =response.total_count
+          // console.log("Number of repos",this.numberOfRepos)
+          // this.repositories = response.items
+          for(let i=0; i<response.items.length; i++){
+            let repoByName = new RepoByName ("","","","",0,new Date());
+          repoByName.name =  response.items[i]["name"]
+          repoByName.description =  response.items[i]["description"]
+          repoByName.language =  response.items[i]["language"]
+          repoByName.html_url =  response.items[i]["html_url"]
+          repoByName.updated_at = response.items[i]["updated_at"]
+          this.repobyname.push(repoByName)
+          }
+          resolve()
+          // console.log(this.reposByName)
+        },
+        error=>{
+          // this.numberOfRepos.repoCount= 0; 
+          console.log("an error occured")
+          reject(error)
+        })
+      })
+      return promise
   }
 
 

@@ -11,6 +11,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatTabsModule} from '@angular/material/tabs';
 import { SearchResultComponent } from './component/search-result/search-result.component';
+import { MatToolbarModule } from '@angular/material/toolbar';
 
 @NgModule({
   declarations: [
@@ -26,7 +27,8 @@ import { SearchResultComponent } from './component/search-result/search-result.c
     HttpClientModule,
     BrowserAnimationsModule,
     MatTabsModule,
-    FormsModule
+    FormsModule,
+    MatToolbarModule
   ],
   providers: [],
   bootstrap: [AppComponent]
