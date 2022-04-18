@@ -1,5 +1,6 @@
 export class UsersClass {
     constructor(
+        public name:string,
         public following:string,
         public followers:string,
         public login: string,

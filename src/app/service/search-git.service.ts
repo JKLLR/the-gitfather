@@ -17,6 +17,7 @@ export class SearchGitService {
 
   getUserData(userName: string) {
     interface userApiResponse {
+      name:string;
       followers: string;
       following: string;
       login: string;
@@ -28,6 +29,7 @@ export class SearchGitService {
   
     let promise = new Promise<void>((resolve, reject) => {
       this.http.get<userApiResponse>(`https://api.github.com/users/${userName}?${environment.apiKey}`).toPromise().then(response => {
+        this.user.name =  response.name;
         this.user.followers = response.followers;
         this.user.following = response.following;
         this.user.avatar_url = response.avatar_url;
@@ -94,7 +96,7 @@ export class SearchGitService {
 
 
   constructor(private http: HttpClient, private route: ActivatedRoute) {
-    this.user = new UsersClass("", "", "", "");
+    this.user = new UsersClass("", "", "", "",'');
   }
 
 
