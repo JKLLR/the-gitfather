@@ -10,13 +10,15 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatTabsModule} from '@angular/material/tabs';
+import { SearchResultComponent } from './component/search-result/search-result.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HeaderComponent,
     routingComponents,
-    FooterComponent
+    FooterComponent,
+    SearchResultComponent
   ],
   imports: [
     BrowserModule,
