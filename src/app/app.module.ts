@@ -13,6 +13,7 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { SearchResultComponent } from './component/search-result/search-result.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TimePipePipe } from './pipe/time-pipe.pipe';
+import { VisitedRepositoryDirective } from './directives/visited-repository.directive';
 
 @NgModule({
   declarations: [
@@ -21,7 +22,8 @@ import { TimePipePipe } from './pipe/time-pipe.pipe';
     routingComponents,
     FooterComponent,
     SearchResultComponent,
-    TimePipePipe
+    TimePipePipe,
+    VisitedRepositoryDirective
   ],
   imports: [
     BrowserModule,
