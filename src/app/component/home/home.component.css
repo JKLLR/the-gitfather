@@ -20,6 +20,15 @@
 h5,h4 {
   color: white;
   font-family: 'Josefin Sans', sans-serif;
+
+}
+
+.header h5{
+  font-size: 20px;
+}
+
+.header h4{
+  font-size: 20px;
 }
 
 .header .content {
