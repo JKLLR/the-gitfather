@@ -1,0 +1,28 @@
+<div *ngIf="numberOfRepos.total_count === 0" class="text-center" style="font-size: 1.5rem; padding-top: 6%;">
+    <img src="../../../assets/images/search.png" style="width: 8rem;"><br><br><br>
+    <p>We couldnt find any repository matching '{{reponame}}'</p><br>
+    <p>Please enter a valid repository name.</p>
+  </div>
+  <div *ngIf="numberOfRepos.total_count !== 0">
+    <p id="heading" class="text-center">A total of {{numberOfRepos.total_count}} repositories were detected.</p>
+    <div class="cards">
+      <div class="card" *ngFor="let repoByName of reposByName">
+        <div class="card-body">
+          <div class="card-title"><a href={{repoByName.html_url}} target="_blank"
+              appVisitedRepository>{{repoByName.name|titlecase}}</a></div>
+          <p class="card-text" *ngIf="repoByName.description">{{repoByName.description}}</p>
+          <p class="card-text" *ngIf="!repoByName.description">No description is available for this repository</p>
+          <small>Last updated on {{repoByName.updated_at|timePipe}}&nbsp; days(s)
+            ago</small><br>
+          <div class="card-bottom">
+            <div *ngIf="repoByName.language">
+              <i class="fas fa-circle"></i>&nbsp;{{repoByName.language}}
+            </div>&nbsp;&nbsp;
+            <div *ngIf="!repoByName.language">
+              <i class="fas fa-circle"></i>&nbsp;Undefined
+            </div>&nbsp;&nbsp;
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

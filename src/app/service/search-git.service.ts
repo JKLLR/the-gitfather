@@ -13,6 +13,7 @@ export class SearchGitService {
   user: UsersClass;
   repos: RepoClass[] = [];
   repobyname: RepoByName[] = [];
+  numberOfRepos: any;
 
 
 

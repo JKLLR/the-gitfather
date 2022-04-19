@@ -14,6 +14,7 @@ import { SearchResultComponent } from './component/search-result/search-result.c
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { TimePipePipe } from './pipe/time-pipe.pipe';
 import { VisitedRepositoryDirective } from './directives/visited-repository.directive';
+import { RepoResultComponent } from './component/repo-result/repo-result.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,8 @@ import { VisitedRepositoryDirective } from './directives/visited-repository.dire
     FooterComponent,
     SearchResultComponent,
     TimePipePipe,
-    VisitedRepositoryDirective
+    VisitedRepositoryDirective,
+    RepoResultComponent
   ],
   imports: [
     BrowserModule,
