@@ -36,7 +36,7 @@
 </nav> -->
 
 
-<mat-toolbar class="navbar">
+<mat-toolbar class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">The <img width="30" alt="Angular Logo" src="./assets/fav.png"
         style="padding-bottom: 10%;" /><br>Gitfather</a>
 
@@ -45,9 +45,8 @@
         <a (click)=toggleUserForm() *ngIf="!isShowUserForm">Find a user</a>
         <form #userForm="ngForm" *ngIf="isShowUserForm">
             <div class="input-group" style="width: 13rem">
-                <input type="text" class="form-control me-2" placeholder="Search by username"
-                    aria-describedby="button-addon2" [(ngModel)]="username" name="username" aria-label="Search"
-                    style="background-color: transparent; color: white;">
+                <input type="text" class="form-control" placeholder="Search by username" aria-describedby="button-addon2"
+                [(ngModel)]="username" name="username" style="background-color: transparent; color: black;">
                 <div class="input-group-append">
                     <button class="btn btn-outline-dark" type="button" routerLink="/search-result"
                         routerLinkActive="activeRoute" (click)="findProfile();toggleUserForm(); userForm.reset()"><a><i

@@ -1,1 +1,54 @@
-<p>search-result works!</p>
+<div id="content" class="container-fluid">
+    <div *ngIf="user.login === 'User not found'" class="text-center" style="font-size: 1.5rem;">
+      <img src="../../../assets/images/search.png" style="width: 8rem;"><br><br><br>
+      <p>We couldn’t find any users matching '{{username}}'</p><br>
+      <p>Please enter a valid username.</p>
+    </div>
+    <div *ngIf="user.login !== 'User not found'">
+      <h2 class="text-center">{{user.login}}'s Profile</h2>
+      <div class="media">
+        <img src={{user.avatar_url}} class="mr-3 img-responsive img-cirlce" alt="...">
+        <div class="media-body">
+          <mat-tab-group dynamicHeight>
+            <mat-tab label="User Info">
+              <div class="tabcontent userInfo">
+                <p *ngIf="user.name"><span>Name:</span>&nbsp;&nbsp;{{user.name}}</p>
+                <p *ngIf="user.login"><span>Username:</span>&nbsp;&nbsp;{{user.login}}</p>
+                <p><span>Followers:</span>&nbsp;&nbsp;{{user.followers}}</p>
+                <p><span>Following:</span>&nbsp;&nbsp;{{user.following}}</p>
+                <p *ngIf="user.public_repos"><span>Number of public repositories:</span>&nbsp;&nbsp;{{user.public_repos}}
+                </p>
+                
+                <p *ngIf="user.created_at"><span>Created
+                    on:</span>&nbsp;&nbsp;{{user.created_at|date}}&nbsp;({{user.created_at}}) days(s) ago</p>
+                
+              </div>
+            </mat-tab>
+            <mat-tab label="Repositories">
+              <div class="tabcontent cards">
+                <div class="card" *ngFor="let repo of repos">
+                  <div class="card-body">
+                    <div class="card-title"><a href={{repo.html_url}} target="_blank"
+                        appVisitedRepository>{{repo.name|titlecase}}</a></div>
+                    <p class="card-text" *ngIf="repo.description">{{repo.description}}</p>
+                    <p class="card-text" *ngIf="!repo.description">No description is available for this repository</p>
+                    <small>Last updated on {{repo.updated_at|date}}</small><br>
+                    <div class="card-bottom">
+                      <div *ngIf="repo.language">
+                        <i class="fas fa-circle"></i>&nbsp;{{repo.language}}
+                      </div>&nbsp;&nbsp;
+                      <div *ngIf="!repo.language">
+                        <i class="fas fa-circle"></i>&nbsp;Undefined
+                      </div>&nbsp;&nbsp;
+                     
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </mat-tab>
+          </mat-tab-group>
+        </div>
+      </div>
+    </div>
+  </div>
+  
