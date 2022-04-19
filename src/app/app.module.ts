@@ -12,6 +12,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations'
 import {MatTabsModule} from '@angular/material/tabs';
 import { SearchResultComponent } from './component/search-result/search-result.component';
 import { MatToolbarModule } from '@angular/material/toolbar';
+import { TimePipePipe } from './pipe/time-pipe.pipe';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
     HeaderComponent,
     routingComponents,
     FooterComponent,
-    SearchResultComponent
+    SearchResultComponent,
+    TimePipePipe
   ],
   imports: [
     BrowserModule,
