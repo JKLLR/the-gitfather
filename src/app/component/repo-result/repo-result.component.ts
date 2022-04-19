@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { SearchGitService } from 'src/app/service/search-git.service';
 import { RepoByName } from 'src/app/repo-by-name';
 import { ActivatedRoute } from '@angular/router';
+import { NumberOfRepositories } from 'src/app/number-of-repositories';
 
 @Component({
   selector: 'app-repo-result',
@@ -12,7 +13,7 @@ export class RepoResultComponent implements OnInit {
 
   reposByName:RepoByName[];
   reponame:string;
-  numberOfRepos: any;
+  numberOfRepos:NumberOfRepositories;
 
   constructor( private route: ActivatedRoute, private searchGitService: SearchGitService ) {}
 

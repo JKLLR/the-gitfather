@@ -8,8 +8,9 @@ import { RepoResultComponent } from './component/repo-result/repo-result.compone
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full'},
   {path: 'home', component:HomeComponent},
-  {path: 'my-profile',component:MyProfileComponent}
-  
+  {path: 'my-profile',component:MyProfileComponent},
+  { path: 'search-result/:username', component: SearchResultComponent},
+  { path: 'repo-result/:reponame', component: RepoResultComponent},
 
 ];
 

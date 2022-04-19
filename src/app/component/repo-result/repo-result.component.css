@@ -1,0 +1,58 @@
+#heading {
+    padding-top: 6%;
+    font-size: 2rem;
+  }
+  
+  .card {
+    /*animates card elements*/
+    margin: 3%;
+    width: 21rem;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 17px rgba(0, 0, 0, 0.35);
+  }
+  
+  .cards {
+    /*allows for cards to append side by side*/
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  a {
+    text-decoration: none;
+    color: #3f51b5;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+  }
+  
+  a:hover {
+    text-decoration: underline;
+  }
+  
+  .card-header {
+    padding: 0.5rem;
+  }
+  
+  .card-bottom {
+    display: flex;
+  }
+  
+  .userInfo {
+    margin: 4%;
+    margin-left: 5%;
+  }
+  
+  .userInfo span {
+    color: #3f51b5;
+    font-weight: bold;
+    letter-spacing: 0.05rem;
+  }
+  
+  .fas {
+    font-size: 0.9rem;
+  }
+
+  #content h2 {
+    font-family: god;
+  }
+  
+  

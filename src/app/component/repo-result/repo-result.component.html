@@ -1,5 +1,5 @@
 <div *ngIf="numberOfRepos.total_count === 0" class="text-center" style="font-size: 1.5rem; padding-top: 6%;">
-   <br><br><br>
+    <br><br><br>
     <p>We couldnt find any repository matching '{{reponame}}'</p><br>
     <p>Please enter a valid repository name.</p>
   </div>
@@ -21,6 +21,7 @@
             <div *ngIf="!repoByName.language">
               <i class="fas fa-circle"></i>&nbsp;Undefined
             </div>&nbsp;&nbsp;
+            
           </div>
         </div>
       </div>
