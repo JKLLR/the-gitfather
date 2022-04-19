@@ -20,7 +20,7 @@
                 </p>
                 
                 <p *ngIf="user.created_at"><span>Created
-                    on:</span>&nbsp;&nbsp;{{user.created_at|date}}&nbsp;({{user.created_at}}) days(s) ago</p>
+                    on:</span>&nbsp;&nbsp;{{user.created_at|timePipe}}&nbsp; days(s) ago</p>
                 
               </div>
             </mat-tab>
