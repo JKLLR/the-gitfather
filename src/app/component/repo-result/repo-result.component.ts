@@ -22,7 +22,7 @@ export class RepoResultComponent implements OnInit {
     this.searchGitService.repoByNameRequest(this.reponame).then((response) =>{
       this.reposByName =this.searchGitService.repobyname;
     });
-    this.searchGitService.repoByNameRequest(this.reponame).then((response) =>{
+    this.searchGitService.repoByNameNumberRequest(this.reponame).then((response) =>{
       this.numberOfRepos =this.searchGitService.numberOfRepos;
     });
     console.log(this.numberOfRepos)

@@ -96,10 +96,6 @@ export class SearchGitService {
 
   }
 
-
-
-
-
   constructor(private http: HttpClient, private route: ActivatedRoute) {
     this.user = new UsersClass("", "", "", "",'');
   }
@@ -132,6 +128,26 @@ export class SearchGitService {
         },
         error=>{
           // this.numberOfRepos.repoCount= 0; 
+          console.log("an error occured")
+          reject(error)
+        })
+      })
+      return promise
+  }
+
+  repoByNameNumberRequest(reponame){
+    interface repoByNameNumberApiResponse{
+      total_count:number
+      } 
+      let promise = new Promise<void>((resolve,reject)=>{
+        this.http.get<repoByNameNumberApiResponse>(`https://api.github.com/search/repositories?q=${reponame}`).toPromise().then(response=>{
+          this.numberOfRepos.total_count =response.total_count
+          console.log("Number of repos",this.numberOfRepos)
+          resolve()
+          console.log("Numbers",this.numberOfRepos.total_count)
+        },
+        error=>{
+          this.numberOfRepos.total_count= 0; 
           console.log("an error occured")
           reject(error)
         })
