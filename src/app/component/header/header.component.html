@@ -1,40 +1,3 @@
-<!-- <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <div class="container-fluid">
-
-        <a class="navbar-brand" href="#">The <img width="30" alt="Angular Logo" src="./assets/fav.png"
-                style="padding-bottom: 10%;" /><br>Gitfather</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarTogglerDemo02"
-            aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <form class="d-flex">
-                <form #userForm="ngForm" *ngIf="isShowUserForm">
-                    
-                    <input type="text" class="form-control me-2" placeholder="Search..."
-                         [(ngModel)]="username" name="username" aria-label="Search">
-
-                    
-                    <button class="btn btn-outline-dark" type="button" routerLink="/search-result"
-                        routerLinkActive="activeRoute" (click)="findProfile();toggleUserForm(); userForm.reset()"><a><i
-                                class="fas fa-search" style="width:0.4rem;"></i></a>Find GitUser</button>
-                </form>
-            </form>
-
-           
-
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a routerLink="/home" routerLinkActive="activeRoute">Home</a>
-                </li>
-
-
-            </ul>
-
-        </div>
-    </div>
-</nav> -->
-
 
 <mat-toolbar class="navbar navbar-light bg-light">
     <a class="navbar-brand" href="#">The <img width="30" alt="Angular Logo" src="./assets/fav.png"
@@ -54,6 +17,20 @@
                 </div>
             </div>
         </form>&nbsp;&nbsp;
+
+
+        <a (click)=toggleRepoForm() *ngIf="!isShowRepoForm">Find a repo</a>
+        <form #repoForm="ngForm" *ngIf="isShowRepoForm">
+          <div class="input-group" style="width: 13rem">
+            <input type="text" class="form-control" placeholder="Search by reponame" aria-describedby="button-addon2"
+              [(ngModel)]="reponame" name="reponame" style="background-color: transparent; color: black;">
+            <div class="input-group-append">
+              <button class="btn btn-outline-secondary" type="button" routerLink="/repo-result"
+                routerLinkActive="activeRoute" (click)="findRepos(); toggleRepoForm(); repoForm.reset()"><a><i
+                    class="fas fa-search" style="width:0.4rem;"></i></a></button>
+            </div>
+          </div>
+        </form>
 
     </div>
 </mat-toolbar>

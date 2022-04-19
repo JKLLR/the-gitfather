@@ -40,13 +40,12 @@ export class HeaderComponent implements OnInit {
     this.repos =this.searchGitService.repos
   }
 
-  // findRepos(){
-  //   this.router.navigate(['/repo-result',this.reponame]);
-  //   this.searchGitService.getRepositoryData(this.reponame);
-  //   this.reposByName =this.searchGitService.repobyname;
-  //   this.searchGitService.repoByNameNumberRequest(this.reponame);
-  //   this.numberOfRepos =this.searchGitService.numberOfRepos;
-  // } 
+  findRepos(){
+    this.router.navigate(['/repo-result',this.reponame]);
+    this.searchGitService.getRepositoryData(this.reponame);
+    this.reposByName =this.searchGitService.repobyname;
+    this.searchGitService.repoByNameRequest(this.reponame);
+  } 
 
   ngOnInit(): void {
   }
