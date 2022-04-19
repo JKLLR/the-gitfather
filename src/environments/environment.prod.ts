@@ -1,4 +1,4 @@
 export const environment = {
-  production: true
-  // apiKey = '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'
+  production: false,
+  apiKey: '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'
 };
