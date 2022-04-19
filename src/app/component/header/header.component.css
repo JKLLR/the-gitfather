@@ -1,6 +1,6 @@
 
 .navbar{
-  height: 10vh;
+  height: 9vh;
 }
 
 
@@ -29,7 +29,7 @@
   }
   
   a {
-    font-size: 1rem;
+    font-size: 1.3rem;
     cursor: pointer;
     padding-right: 1rem;
     text-decoration: none;
@@ -53,4 +53,8 @@
     border-color: black;
   }
   
+  .links a:hover{
+    color: darkgrey;
+  }
+
   
