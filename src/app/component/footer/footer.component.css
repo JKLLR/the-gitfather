@@ -28,7 +28,8 @@ footer {
 .credits a {
     text-decoration: none;
     color: black;
-    font-family: signature;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Whisper', cursive;   
     font-size: 40px;
 
 }
